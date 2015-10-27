@@ -1,0 +1,4 @@
+---
+consul_ver : '0.5.2'
+consul_zip : '{{consul_ver}}_linux_amd64.zip'
+consul_url : 'https://dl.bintray.com/mitchellh/consul/{{consul_zip}}'

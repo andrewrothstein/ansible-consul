@@ -1,0 +1,21 @@
+---
+- name: download consul...
+  environment: proxy_env
+  get_url: url='{{consul_url}}' dest='/tmp/{{consul_zip}}'
+
+- name: create /opt/consul-ver
+  file: >-
+    owner=root
+    group=root
+    mode='go-w'
+    path='/opt/consul-{{consul_ver}}'
+    state=directory
+
+- name: unarchive consul...
+  unarchive: copy=no src='/tmp/{{consul_zip}}' dest='/opt/consul-{{consul_ver}}'
+
+- name: link consul...
+  file: src='/opt/consul-{{consul_ver}}' dest='/opt/consul' state=link
+
+- name: include consul in the default path
+  copy: src='etc/profile.d/consul.sh' dest='/etc/profile.d/consul.sh' mode=644
