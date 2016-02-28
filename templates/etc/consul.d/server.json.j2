@@ -1,0 +1,16 @@
+{
+    "server" : true,
+    "bind" : {{consul_agent_bind | to_json}},
+    "client" : {{consule_agent_client_bind | to_json}},
+    "bootstrap-expect" : {{consul_agent_server | length}},
+    "datacenter" : {{consul_agent_dc | to_json}},
+    "enable_syslog" : {{consul_agent_enable_syslog | to_json}},
+    "encrypt" : {{consul_agent_encrypt | to_json}},
+    "http_port" : {{consul_agent_http_port | to_json}},
+    "retry_join" : {{consul_agent_server | to_json}},
+{% if consul_agent_recursors is defined %}
+   "recursor" : {{consul_agent_recursors | to_json}},
+{% endif %}
+   "syslog" : {{consul_agent_enable_syslog | to_json}},
+   "ui" : {{consul_agent_enable_ui | to_json}}
+}

@@ -1,21 +1,59 @@
 ---
+- name: create consul group
+  group: name=consul state=present
+  
+- name: create consul user
+  user: >-
+    name=consul
+    group=consul
+    home={{consul_agent_data_dir}}
+    state=present
+    
 - name: download consul...
-  environment: proxy_env
-  get_url: url='{{consul_url}}' dest='/tmp/{{consul_zip}}'
-
-- name: create /opt/consul-ver
-  file: >-
-    owner=root
-    group=root
-    mode='go-w'
-    path='/opt/consul-{{consul_ver}}'
-    state=directory
+  get_url: >
+    url={{consul_url}}
+    dest={{consul_agent_data_dir}}/{{consul_zip}}'
+    owner=consul
+    group=consul
+    mode=0644
 
 - name: unarchive consul...
-  unarchive: copy=no src='/tmp/{{consul_zip}}' dest='/opt/consul-{{consul_ver}}'
+  unarchive: >
+    copy=no
+    src={{consul_agent_data_dir}}/{{consul_zip}}
+    dest=/usr/local/bin
+    creates=/usr/local/bin/consul
 
-- name: link consul...
-  file: src='/opt/consul-{{consul_ver}}' dest='/opt/consul' state=link
+- name: create directories
+  file: >-
+    path={{item}}
+    owner=consul
+    group=consul
+    state=directory
+  with_items:
+    - {{consul_agent_etc_dir}}
+    - {{consul_agent_data_dir}}
 
-- name: include consul in the default path
-  copy: src='etc/profile.d/consul.sh' dest='/etc/profile.d/consul.sh' mode=644
+- name: configure templates...
+  template: >-
+    src=etc/consul.d/server.json.j2
+    dest={{consul_agent_etc_dir}}/consul.json
+    owner=consul
+    group=consul
+    mode=0644
+
+- name: install systemd service
+  register: consul_service_modified
+  template: >-
+    src=usr/lib/systemd/system/consul.service.j2
+    dest=/usr/lib/systemd/system/consul.service
+    owner=root
+    group=root
+    mode=0644
+
+- name: systemctl daemon-reload
+  when: consul_service_modified|changed
+  command: systemctl daemon-reload
+    
+- name: launch consul service
+  system: name=consul enabled=true state=started
