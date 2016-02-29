@@ -12,7 +12,7 @@
 - name: download consul...
   get_url: >
     url={{consul_url}}
-    dest={{consul_agent_data_dir}}/{{consul_zip}}'
+    dest={{consul_agent_data_dir}}/{{consul_zip}}
     owner=consul
     group=consul
     mode=0644
@@ -31,8 +31,8 @@
     group=consul
     state=directory
   with_items:
-    - {{consul_agent_etc_dir}}
-    - {{consul_agent_data_dir}}
+    - '{{consul_agent_etc_dir}}'
+    - '{{consul_agent_data_dir}}'
 
 - name: configure templates...
   template: >-
@@ -56,4 +56,4 @@
   command: systemctl daemon-reload
     
 - name: launch consul service
-  system: name=consul enabled=true state=started
+  service: name=consul enabled=true state=started
