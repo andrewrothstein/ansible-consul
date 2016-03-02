@@ -36,7 +36,7 @@
 
 - name: configure templates...
   template: >-
-    src=etc/consul.d/server.json.j2
+    src=etc/consul.d/{{consul_agent_template}}.j2
     dest={{consul_agent_etc_dir}}/consul.json
     owner=consul
     group=consul

@@ -20,5 +20,7 @@ galaxy_info:
   categories:
     - development
 
-dependencies: []
+dependencies:
+  - andrewrothstein.unarchive-deps
+
   

@@ -4,3 +4,4 @@ consul_url : '{{consul_mirror}}/{{consul_ver}}/{{consul_zip}}'
 
 consul_agent_bind_address : "{{hostvars[inventory_hostname]['ansible_' + consul_agent_network_iface]['ipv4']['address']}}"
 
+consul_agent_template : "{% if inventory_hostname in groups['consul-agent-server'] %}server.json{% else %}client.json{% endif %}"
