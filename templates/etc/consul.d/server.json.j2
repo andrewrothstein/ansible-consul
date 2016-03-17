@@ -13,7 +13,9 @@
 	"http" : {{consul_agent_http_port | to_json}}
     },
 {% if consul_agent_recursors is defined %}
-   "recursor" : {{consul_agent_recursors | to_json}},
+   "recursors" : {{consul_agent_recursors | to_json}},
+{% elif ansible_dns.nameservers is defined %}
+   "recursors" : {{ansible_dns.nameservers | to_json}},
 {% endif %}
    "ui" : {{consul_agent_enable_ui | to_json}}
 }

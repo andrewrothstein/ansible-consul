@@ -16,3 +16,7 @@ consul_agent_http_port : 8500
 consul_agent_enable_syslog : True
 consul_agent_enable_ui : True
 
+# example for hardcoding the upstream DNS resolvers
+#consul_agent_recursors:
+#  - xxx.yyy.zzz.aaa
+#  - bbb.ccc.ddd.eee
