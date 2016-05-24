@@ -17,6 +17,14 @@
     group=consul
     mode=0644
 
+- name: version specific directory for binary
+  file: >-
+    path=/usr/local/bin/{{consul_name}}
+    state=directory
+    owner=root
+    group=root
+    mode=0755
+    
 - name: unarchive consul...
   unarchive: >
     copy=no
