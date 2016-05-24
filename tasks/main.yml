@@ -21,8 +21,15 @@
   unarchive: >
     copy=no
     src={{consul_agent_data_dir}}/{{consul_zip}}
-    dest=/usr/local/bin
-    creates=/usr/local/bin/consul
+    dest=/usr/local/bin/{{consul_name}}
+    creates=/usr/local/bin/{{consul_name}}/consul
+
+- name: link consul...
+  file: >-
+    src=/usr/local/bin/{{consul_name}}/consul
+    dest=/usr/local/bin/consul
+    state=link
+    force=yes
 
 - name: create directories
   file: >-

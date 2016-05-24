@@ -1,5 +1,6 @@
 ---
-consul_zip : 'consul_{{consul_ver}}_{{consul_platform}}.zip'
+consul_name : 'consul_{{consul_ver}}_{{consul_platform}}'
+consul_zip : '{{consul_name}}.zip'
 consul_url : '{{consul_mirror}}/{{consul_ver}}/{{consul_zip}}'
 
 consul_agent_advertise_addr : "{{ ansible_default_ipv4.address }}"
