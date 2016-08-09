@@ -13,6 +13,10 @@ consul_agent_encrypt : 'EYRY+Ks0+i/DZrEicth1tQ=='
 consul_agent_dns_port : 8600
 consul_agent_http_port : 8500
 
+# how many servers constitute the cluster?
+# only start accepting writes when this many acknowledgements are achieved
+consul_agent_bootstrap_expect: 7
+
 consul_agent_enable_syslog : True
 consul_agent_enable_ui : True
 
