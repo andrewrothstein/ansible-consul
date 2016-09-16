@@ -1,31 +1,17 @@
 ---
-- name: create consul group
-  become: yes
-  become_user: root
-  group: name=consul state=present
-  
-- name: create consul user
-  become: yes
-  become_user: root
-  user: >-
-    name=consul
-    group=consul
-    home={{consul_agent_data_dir}}
-    state=present
-    
 - name: download consul...
   become: yes
   become_user: root
   get_url: >
     url={{consul_url}}
-    dest={{consul_agent_data_dir}}/{{consul_zip}}
+    dest=/tmp/{{consul_zip}}
     mode=0644
 
 - name: version specific directory for binary
   become: yes
   become_user: root
   file: >-
-    path=/usr/local/bin/{{consul_name}}
+    path={{consul_install_dir}}/{{consul_name}}
     state=directory
     mode=0755
     
@@ -34,57 +20,16 @@
   become_user: root
   unarchive: >
     copy=no
-    src={{consul_agent_data_dir}}/{{consul_zip}}
-    dest=/usr/local/bin/{{consul_name}}
-    creates=/usr/local/bin/{{consul_name}}/consul
+    src=/tmp/{{consul_zip}}
+    dest={{consul_install_dir}}/{{consul_name}}
+    creates={{consul_install_dir}}/{{consul_name}}/consul
 
 - name: link consul...
   become: yes
   become_user: root
   file: >-
-    src=/usr/local/bin/{{consul_name}}/consul
-    dest=/usr/local/bin/consul
+    src={{consul_install_dir}}/{{consul_name}}/consul
+    dest={{consul_install_dir}}/consul
     state=link
     force=yes
 
-- name: create directories
-  become: yes
-  become_user: root
-  file: >-
-    path={{item}}
-    owner=consul
-    group=consul
-    state=directory
-  with_items:
-    - '{{consul_agent_etc_dir}}'
-    - '{{consul_agent_data_dir}}'
-
-- name: configure templates...
-  become: yes
-  become_user: root
-  template: >-
-    src=etc/consul.d/{{consul_agent_template}}.j2
-    dest={{consul_agent_etc_dir}}/consul.json
-    owner=consul
-    group=consul
-    mode=0644
-
-- name: install systemd service
-  become: yes
-  become_user: root
-  register: consul_service_modified
-  template: >-
-    src=usr/lib/systemd/system/consul.service.j2
-    dest=/usr/lib/systemd/system/consul.service
-    mode=0644
-
-- name: systemctl daemon-reload
-  become: yes
-  become_user: root
-  when: consul_service_modified|changed
-  command: systemctl daemon-reload
-    
-- name: launch consul service
-  become: yes
-  become_user: root
-  service: name=consul enabled=true state=started

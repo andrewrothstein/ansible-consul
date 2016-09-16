@@ -2,7 +2,3 @@
 consul_name : 'consul_{{consul_ver}}_{{consul_platform}}'
 consul_zip : '{{consul_name}}.zip'
 consul_url : '{{consul_mirror}}/{{consul_ver}}/{{consul_zip}}'
-
-consul_agent_advertise_addr : "{{ hostvars[inventory_hostname]['ansible_' + hostvars[inventory_hostname]['consul_agent_network_iface']]['ipv4']['address'] }}"
-
-consul_agent_template : "{% if inventory_hostname in groups['consul-agent-server'] %}server.json{% else %}client.json{% endif %}"

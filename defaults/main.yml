@@ -1,26 +1,5 @@
 ---
-consul_ver : '0.6.4'
-consul_platform : 'linux_amd64'
-consul_mirror : 'https://releases.hashicorp.com/consul'
-
-consul_agent_network_iface : 'eth0'
-consul_agent_bind_addr : '0.0.0.0'
-consul_agent_etc_dir : /etc/consul.d
-consul_agent_data_dir : /var/consul
-consul_agent_dc : dc1
-consul_agent_encrypt : 'EYRY+Ks0+i/DZrEicth1tQ=='
-
-consul_agent_dns_port : 8600
-consul_agent_http_port : 8500
-
-# how many servers constitute the cluster?
-# only start accepting writes when this many acknowledgements are achieved
-consul_agent_bootstrap_expect: 7
-
-consul_agent_enable_syslog : True
-consul_agent_enable_ui : True
-
-# example for hardcoding the upstream DNS resolvers
-#consul_agent_recursors:
-#  - xxx.yyy.zzz.aaa
-#  - bbb.ccc.ddd.eee
+consul_ver : '0.7.0'
+consul_platform : linux_amd64
+consul_mirror : https://releases.hashicorp.com/consul
+consul_install_dir: /usr/local/bin
