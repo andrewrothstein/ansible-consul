@@ -1,7 +1,7 @@
 [Unit]
 Description=Consul Agent
-After=network.service
-Requires=network.service
+After=network-online.target
+Requires=network-online.target
 
 [Service]
 User=consul
