@@ -5,6 +5,7 @@
   get_url: >
     url={{consul_url}}
     dest=/tmp/{{consul_zip}}
+    checksum={{consul_checksum}}
     mode=0644
 
 - name: version specific directory for binary
