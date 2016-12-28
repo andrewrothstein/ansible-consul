@@ -1,6 +1,7 @@
 ---
-consul_ver : '0.7.1'
+consul_ver : '0.7.2'
 consul_platform : linux_amd64
 consul_mirror : https://releases.hashicorp.com/consul
-consul_checksum: sha256:5dbfc555352bded8a39c7a8bf28b5d7cf47dec493bc0496e21603c84dfe41b4b
+# https://releases.hashicorp.com/consul/0.7.2/consul_0.7.2_SHA256SUMS
+consul_checksum: sha256:aa97f4e5a552d986b2a36d48fdc3a4a909463e7de5f726f3c5a89b8a1be74a58
 consul_install_dir: /usr/local/bin
