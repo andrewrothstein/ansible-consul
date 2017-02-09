@@ -1,36 +1,36 @@
 ---
 - name: download consul...
-  become: yes
+  become: '{{consul_privilege_escalate}}'
   become_user: root
-  get_url: >
-    url={{consul_url}}
-    dest=/tmp/{{consul_zip}}
-    checksum={{consul_checksum}}
-    mode=0644
+  get_url:
+    url: '{{consul_url}}'
+    dest: /tmp/{{consul_zip}}
+    checksum: '{{consul_checksum}}'
+    mode: '0644'
 
 - name: version specific directory for binary
-  become: yes
+  become: '{{consul_privilege_escalate}}'
   become_user: root
-  file: >-
-    path={{consul_install_dir}}/{{consul_name}}
-    state=directory
-    mode=0755
+  file:
+    path: '{{consul_install_dir}}/{{consul_name}}'
+    state: directory
+    mode: '0755'
     
 - name: unarchive consul...
-  become: yes
+  become: '{{consul_privilege_escalate}}'
   become_user: root
-  unarchive: >
-    copy=no
-    src=/tmp/{{consul_zip}}
-    dest={{consul_install_dir}}/{{consul_name}}
-    creates={{consul_install_dir}}/{{consul_name}}/consul
+  unarchive:
+    copy: no
+    src: /tmp/{{consul_zip}}
+    dest: '{{consul_install_dir}}/{{consul_name}}'
+    creates: '{{consul_install_dir}}/{{consul_name}}/consul'
 
 - name: link consul...
-  become: yes
+  become: '{{consul_privilege_escalate}}'
   become_user: root
-  file: >-
-    src={{consul_install_dir}}/{{consul_name}}/consul
-    dest={{consul_install_dir}}/consul
-    state=link
-    force=yes
+  file:
+    src: '{{consul_install_dir}}/{{consul_name}}/consul'
+    dest: '{{consul_install_dir}}/consul'
+    state: link
+
 
