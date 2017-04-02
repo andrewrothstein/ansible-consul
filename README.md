@@ -1,5 +1,6 @@
-andrewrothstein.terraform
-===========================
+[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-consul.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-consul)
+andrewrothstein.consul
+======================
 
 installs [Consul](https://www.consul.io/)
 
