@@ -2,7 +2,7 @@
 consul_name : 'consul_{{consul_ver}}_{{consul_platform}}'
 consul_zip : '{{consul_name}}.zip'
 
-# https://releases.hashicorp.com/consul/0.8.0/consul_0.8.0_linux_amd64.zip
+# https://releases.hashicorp.com/consul/0.8.3/consul_0.8.3_linux_amd64.zip
 consul_url : '{{consul_mirror}}/{{consul_ver}}/{{consul_zip}}'
 
 consul_checksum: '{{consul_checksums[consul_platform]}}'
