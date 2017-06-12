@@ -16,6 +16,9 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
+    - name: Debian
+      versions:
+        - jessie
     - name: Alpine
       version:
         - all
@@ -25,6 +28,6 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.unarchive-deps
-    version: v1.0.6
+    version: v1.0.8
 
   

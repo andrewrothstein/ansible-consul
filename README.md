@@ -1,8 +1,8 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-consul.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-consul)
 andrewrothstein.consul
 ======================
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-consul.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-consul)
 
-installs [Consul](https://www.consul.io/)
+Installs [Consul](https://www.consul.io/)
 
 Requirements
 ------------
