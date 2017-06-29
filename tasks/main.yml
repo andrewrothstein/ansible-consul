@@ -34,7 +34,7 @@
     state: link
 
 - name: cleanup ...
-  become: '{{consul_privilege_escalation}}'
+  become: '{{consul_privilege_escalate}}'
   become_user: root
   when: consul_cleanup
   file:
