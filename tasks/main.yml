@@ -15,7 +15,7 @@
     path: '{{consul_install_dir}}/{{consul_name}}'
     state: directory
     mode: 0755
-   
+
 - name: unarchive consul...
   become: '{{consul_privilege_escalate}}'
   become_user: root
@@ -33,4 +33,10 @@
     dest: '{{consul_install_dir}}/consul'
     state: link
 
-
+- name: cleanup ...
+  become: '{{consul_privilege_escalation}}'
+  become_user: root
+  when: consul_cleanup
+  file:
+    path: /tmp/{{consul_zip}}
+    state: absent
