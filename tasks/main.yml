@@ -20,7 +20,7 @@
   become: '{{consul_privilege_escalate}}'
   become_user: root
   unarchive:
-    remote_src: no
+    remote_src: yes
     src: /tmp/{{consul_zip}}
     dest: '{{consul_install_dir}}/{{consul_name}}'
     creates: '{{consul_install_dir}}/{{consul_name}}/consul'
