@@ -1,5 +1,5 @@
 ---
-consul_ver : '0.8.5'
+consul_ver : '0.9.0'
 consul_platform : linux_amd64
 consul_mirror : https://releases.hashicorp.com/consul
 
@@ -8,17 +8,18 @@ consul_privilege_escalate: True
 
 consul_cleanup: False
 
-# https://releases.hashicorp.com/consul/0.8.5/consul_0.8.5_SHA256SUMS
+# https://releases.hashicorp.com/consul/0.9.0/consul_0.9.0_SHA256SUMS
 consul_checksums:
-  darwin_386: sha256:2f13a389405724597c97d3e738fcd3350512f3417a5520c21f9b36d06765c4e1
-  darwin_amd64: sha256:cfef78ea3c0b28afe51f7ef0f7663e323398f3311ae4ce760546854991dbdb16
-  freebsd_386: sha256:433db69c35060639b5316346d5ca2af5ab884200bf239dae97f00874a74b376f
-  freebsd_amd64: sha256:3dd53c1e0bdf7c4289fafb701f9738e07e95c59a50f553a3a8fa51f3512751c1
-  freebsd_arm: sha256:d1a4a1be18bc2a25b709ac86e53a8b5cc26a53b2d3bdb2f20509c53d767c3459
-  linux_386: sha256:b1a7c51834178e1cdc38e7377789c23452b77e1861cfedfc2601fa78e914e46d
-  linux_amd64: sha256:35dc317c80862c306ea5b1d9bc93709483287f992fd0797d214d1cc1848e7b62
-  linux_arm: sha256:59d14c76f808a1d41647e2d772ce1fe0d4a522836af238faa4894f7e076b1b03
-  linux_arm64: sha256:5ec25475b02479275c5ade8917706471b329070f7df57323c1cea1b3358bde69
-  solaris_amd64: sha256:6d05136a9c64a6ec6bffc10f3c8e57e944930eeb609dedd7e6c5f81fc81e1eee
-  windows_386: sha256:13b42f20bed1028deec9e272698b65866e187fe26b13b2735f0238b37a1d44b5
-  windows_amd64: sha256:9ccccea7ecbbfedbceb0a6a0e4bbf3c07bcac14334c69faac42e5a9026471161
+  darwin_386: sha256:a7b9fac9429e35b393d9f7e7b3b65dccb920a5dc3589c600ed6aa552ab30e8c8
+  darwin_amd64: sha256:0bf2cee6d7c8eb3ce5bb6a868907d845a0b9fd83655146b9dd17dc530e6a7ef5
+  freebsd_386: sha256:8d53ee049d8fe4934286441acc730606b3002dcc40f54e13f57d3e5e8e332c42
+  freebsd_amd64: sha256:e4fcf24c3f59b9e028dac1414f7242539a9746f104f19e02bdb45dad70794340
+  freebsd_arm: sha256:c6027afc99bde542c7e279fc6a2a6af0dc2d45bbe5a963fbf410063eb770b9ce
+  linux_386: sha256:7f4c537ef333ed93d934b7e0bdb3b16949ae50f4071df16894530e24b9e9d927
+  linux_amd64: sha256:33e54c7d9a93a8ce90fc87f74c7f787068b7a62092b7c55a945eea9939e8577f
+  linux_arm: sha256:35a35db51af51cfbdf6ee67e3d0311c7823cfe17a55f0babccb0d58ee6a344ff
+  linux_arm64: sha256:8b643758ff51c646f64f9db12db8e0bdaaa5c7d9ba57bc37224e1a170e742b65
+  solaris_amd64: sha256:859d5282549bdf3e38ff24c3c33c0a2b9a4016f58fc4050ae64e6bf75e110d0d
+  windows_386: sha256:2ec01564ab08d213169caa1a8e2beb329f7f45339d43e231e0f2b77159568f3c
+  windows_amd64: sha256:c2bd9906b61290fa01ac236393cbfe2f3aadeec4b9ceee724c99217ccb1061ff
+
