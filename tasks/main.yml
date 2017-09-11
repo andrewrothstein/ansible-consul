@@ -29,7 +29,7 @@
   become: '{{consul_privilege_escalate}}'
   become_user: root
   file:
-    src: '{{consul_install_dir}}/{{consul_name}}/consul'
+    src: '{{consul_name}}/consul'
     dest: '{{consul_install_dir}}/consul'
     state: link
 
