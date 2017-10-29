@@ -5,4 +5,5 @@ consul_zip : '{{consul_name}}.zip'
 # https://releases.hashicorp.com/consul/0.8.3/consul_0.8.3_linux_amd64.zip
 consul_url : '{{consul_mirror}}/{{consul_ver}}/{{consul_zip}}'
 
-consul_checksum: '{{consul_checksums[consul_platform]}}'
+consul_checksum: '{{consul_checksums[consul_ver][consul_platform]}}'
+consul_install_vdir: '{{consul_install_dir}}/{{consul_name}}'

@@ -19,13 +19,16 @@ galaxy_info:
     - name: Debian
       versions:
         - jessie
+        - stretch
     - name: Alpine
       version:
+        - all
+    - name: Archlinux
+      versions:
         - all
   galaxy_tags:
     - kv
     - CP
-
 dependencies:
-  - role: andrewrothstein.unarchive-deps
+  - src: andrewrothstein.unarchive-deps
     version: v1.0.9
