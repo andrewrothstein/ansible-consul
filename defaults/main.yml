@@ -1,14 +1,13 @@
 ---
-consul_ver : '1.0.0'
+consul_ver : '1.0.1'
 consul_platform : linux_amd64
 consul_mirror : https://releases.hashicorp.com/consul
 
 consul_install_dir: /usr/local/bin
 consul_privilege_escalate: True
 
-# https://releases.hashicorp.com/consul/1.0.0/consul_1.0.0_SHA256SUMS
 consul_checksums:
-  '1.0.0' :
+  '1.0.0' : # https://releases.hashicorp.com/consul/1.0.0/consul_1.0.0_SHA256SUMS
     darwin_386: sha256:2baf8ce0e392f09d7c9161dbe48405ef1f2883afa6f69ee3c238872002083493
     darwin_amd64: sha256:b2980101554e9ace4c0d56e1d27ab574d166db6625a91d1157a7c41de299313b
     freebsd_386: sha256:7d06af2228aa003508ac7431a802b9e2c951bba4a019cc121163be8ea4a75ea4
@@ -21,6 +20,19 @@ consul_checksums:
     solaris_amd64: sha256:5e6f134451fa3a1ae558495c3a8ff68072b3e17626dfe23a52516069f75ba6bd
     windows_386: sha256:b7415bb29eb56289b6bfa1a39638f55ba88fb443482d1c98ba79e86222f0b5c7
     windows_amd64: sha256:3b65661d4cd0336f8c15b0edee483235c7d2025c987e95164ce7fa77ded3e16d
+  '1.0.1' : # # https://releases.hashicorp.com/consul/1.0.1/consul_1.0.1_SHA256SUMS
+    darwin_386: sha256:95f642a22bc055b810ad22018af3c2590a9a0c2883837fdd42afd36594829f66
+    darwin_amd64: sha256:f894e95936fc80da93f47d327b7a712ae2902cf454027eac1d36666cbca9b560
+    freebsd_386: sha256:adeaaa5fd2ee4b83c8de4d11f40b8c7c42abd958060778bb02d827748f1ac6f6
+    freebsd_amd64: sha256:b16fda8b354f12260ccf922598f9917ea549d0b89c84ca76bcadd17f4156a433
+    freebsd_arm: sha256:b3da6dda65119758277130969bdaaaa989fec702dfc982cec8d2b9e9c102a6c6
+    linux_386: sha256:32c453dc3635922bb955e2058b6de11c184e0e9966b1865f85c700a2cf104f1e
+    linux_amd64: sha256:eac5755a1d19e4b93f6ce30caaf7b3bd8add4557b143890b1c07f5614a667a68
+    linux_arm: sha256:e4cd79302b1506e082a9e79b77d66249a4f87be4ffe42268cb922d15adb7d0d0
+    linux_arm64: sha256:8385e8387a4f06ef0df4823473297a78d4548de9a1a549bec146b5f83a5cfbf7
+    solaris_amd64: sha256:793783e1f93dcb0cdb8e6c15b94bbb30866d61b85f7ae781107cb255c0e751c7
+    windows_386: sha256:04485d94a9e12b88adb94edf6a774ae0837bbb1d6b8166c5b3bb0630c8aa0c0d
+    windows_amd64: sha256:dd09a5d9761f6d96042658ce30f6c0517860fdb5fd463b0c933dda2c2a9d1712
 
 
 
