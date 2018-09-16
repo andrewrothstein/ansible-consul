@@ -1,5 +1,5 @@
 ---
-consul_ver : '1.2.2'
+consul_ver : '1.2.3'
 consul_platform : linux_amd64
 consul_mirror : https://releases.hashicorp.com/consul
 
@@ -161,3 +161,17 @@ consul_checksums:
     solaris_amd64: sha256:ccfe8b74458a22222c740fc0d6e7e167e4ed806435e99f2097249e83681dac48
     windows_386: sha256:76b06cb9b7c48e51d420c2a92643b451ad9368bd6130a781cec1ebd42cc5a886
     windows_amd64: sha256:56cee9cf39997f7ee881779c4bc1b6c39ba4f032a34a83552c76df031fa693bd
+  # https://releases.hashicorp.com/consul/1.2.3/consul_1.2.3_SHA256SUMS
+  '1.2.3':
+    darwin_386: sha256:78a73346aa70ba751430c048f8e6adc81d1f60a11e91f7de5db0566264bdb879
+    darwin_amd64: sha256:d46939292c28027b6c8cef7a3eab3cc8fe9981cbb71dfb8a0eb4b4b556cfe016
+    freebsd_386: sha256:f8df12ad3afab836b7ce9fa2bf6f7c9c81011ef981733aa489189a5bc468da4e
+    freebsd_amd64: sha256:ae51b727c69f3f04ef52a1718592ae129dcfb804366e3fbc4306be1dba7f06f4
+    freebsd_arm: sha256:5467429b730c6f7b184b1be29f0b68a35817d27adc5965927025c3155d5d0bee
+    linux_386: sha256:532e93a6ed35f8e7029a5886d4e81a2137044f2c34b129214703d0200ff55572
+    linux_amd64: sha256:f97996296ef3905c38c504b35035fb731d3cfd9cad129c9523402a4229c709c5
+    linux_arm64: sha256:e0a6855fb46ab9be2cc4a804e8c5eb3a73897a97ae142c553a785563b72d5616
+    linux_arm: sha256:6add2a5a21606e69b1c2146b7cb273f4400f54458c3215398185af8d79857cd9
+    solaris_amd64: sha256:0a47a56fe95c0e686b29e245db90a7089b8bf0ce78347fb908c879c2461cddc2
+    windows_386: sha256:a0c0ceac832c7e65f4ab320a7e40d9109434cfedca289ca09c34850fe3652269
+    windows_amd64: sha256:5c2a8842471ba0d68872ccd3d54c7baae97e52cfd69006a2f7c1a6be0cf3c650
