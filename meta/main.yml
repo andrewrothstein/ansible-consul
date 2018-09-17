@@ -28,7 +28,7 @@ galaxy_info:
         - all
   galaxy_tags:
     - kv
-    - CP
+    - cp
 dependencies:
   - src: andrewrothstein.unarchive-deps
-    version: v1.0.9
+    version: v1.0.10
