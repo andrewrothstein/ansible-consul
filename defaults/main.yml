@@ -202,4 +202,3 @@ consul_checksums:
     solaris_amd64: sha256:f4a39fd4567fd2d166ac8b8caf683344e72c491ee57a0e955f86d597ca3eb8c5
     windows_386: sha256:e2a5dd1e21af37ff7502cc0aaf6124ecd0fb92e7639841cb8c24eb21477fc669
     windows_amd64: sha256:732b2d3b2a09d17c3add1f1e646542174aa48424f11232cb9fe8ea7a53098fb4
-
