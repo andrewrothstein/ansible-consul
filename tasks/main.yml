@@ -2,47 +2,47 @@
 - name: check for consul installation...
   become: yes
   stat:
-    path: '{{consul_install_vdir}}/consul'
+    path: '{{ consul_install_vdir }}/consul'
   changed_when: false
   register: consul_binary
 
 - when: not consul_binary.stat.exists
   block:
     - name: version specific directory for binary
-      become: '{{consul_privilege_escalate}}'
+      become: '{{ consul_privilege_escalate }}'
       become_user: root
       file:
-        path: '{{consul_install_vdir}}'
+        path: '{{ consul_install_vdir }}'
         state: directory
         mode: 0755
     - name: download consul...
-      become: '{{consul_privilege_escalate}}'
+      become: '{{ consul_privilege_escalate }}'
       become_user: root
       get_url:
-        url: '{{consul_url}}'
-        dest: /tmp/{{consul_zip}}
-        checksum: '{{consul_checksum}}'
+        url: '{{ consul_url }}'
+        dest: /tmp/{{ consul_zip }}
+        checksum: '{{ consul_checksum }}'
         mode: 0644
     - name: unarchive consul...
-      become: '{{consul_privilege_escalate}}'
+      become: '{{ consul_privilege_escalate }}'
       become_user: root
       unarchive:
         remote_src: yes
-        src: /tmp/{{consul_zip}}
-        dest: '{{consul_install_vdir}}'
-        creates: '{{consul_install_vdir}}/consul'
+        src: /tmp/{{ consul_zip }}
+        dest: '{{ consul_install_vdir }}'
+        creates: '{{ consul_install_vdir }}/consul'
   always:
     - name: cleanup ...
-      become: '{{consul_privilege_escalate}}'
+      become: '{{ consul_privilege_escalate }}'
       become_user: root
       file:
-        path: /tmp/{{consul_zip}}
+        path: /tmp/{{ consul_zip }}
         state: absent
 
 - name: link consul...
-  become: '{{consul_privilege_escalate}}'
+  become: '{{ consul_privilege_escalate }}'
   become_user: root
   file:
-    src: '{{consul_install_vdir}}/consul'
-    dest: '{{consul_install_dir}}/consul'
+    src: '{{ consul_install_vdir }}/consul'
+    dest: '{{ consul_install_dir }}/consul'
     state: link
