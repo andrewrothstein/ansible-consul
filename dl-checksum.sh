@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 APP=consul
-VER=1.6.0
+VER=${1:-1.6.1}
 DIR=~/Downloads
 MIRROR=https://releases.hashicorp.com/${APP}/${VER}
 
