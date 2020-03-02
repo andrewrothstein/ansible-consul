@@ -1,4 +1,5 @@
 ---
+consul_platform: '{{ consul_os }}_{{ consul_arch }}'
 consul_name: 'consul_{{ consul_ver }}_{{ consul_platform }}'
 consul_zip: '{{ consul_name }}.zip'
 
