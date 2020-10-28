@@ -1,4 +1,9 @@
 ---
 - hosts: all
   roles:
-    - role: '{{playbook_dir}}'
+    - role: '{{ playbook_dir }}'
+  tasks:
+    - command: /usr/local/bin/consul --version
+      register: consul_test_output
+    - debug:
+        msg: '{{ consul_test_output.stdout }}'
