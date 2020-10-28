@@ -1,5 +1,5 @@
 ---
-consul_ver: 1.8.4
+consul_ver: 1.8.5
 consul_os: linux
 consul_arch: amd64
 consul_mirror: https://releases.hashicorp.com/consul
@@ -643,3 +643,29 @@ consul_checksums:
     windows_386: sha256:5595912489d0b9189a03c4e9928cb8b04cc83d7bc5fe33ead8ecd86314b104d1
     # https://releases.hashicorp.com/consul/1.8.4/consul_1.8.4_windows_amd64.zip
     windows_amd64: sha256:7ebcc73f2a225b3c880ae0d7e38b7a441f5aad715f8ab16eccc71818be3e9df8
+  # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_SHA256SUMS
+  '1.8.5':
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_darwin_386.zip
+    darwin_386: sha256:62b7578be25511b84d2bf5cd0fcfd01d68c2b344e83c7129145afe53f9cafa58
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_darwin_amd64.zip
+    darwin_amd64: sha256:238d2d6720423d0fb0138a1ddc045d7fcb40d0013091d98f2092397cfe9437ce
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_freebsd_386.zip
+    freebsd_386: sha256:221526ef2250a51483dfd68fc62a7da5e37115d1c4bb320570732309ba2a9357
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_freebsd_amd64.zip
+    freebsd_amd64: sha256:8f8fe659c46335a6d37a72ddb709bae9d6bd764d47e6c5ffab9519d94d3b703b
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_linux_386.zip
+    linux_386: sha256:b4887d4150977bbe7044b710e24b21f2b7ff4c918455e982a1ac7ad31fe72a0c
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_linux_amd64.zip
+    linux_amd64: sha256:94ab38e6221d3da393d0bbdf19cc524051253a75db078c31e249dad2c497ad46
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_linux_arm64.zip
+    linux_arm64: sha256:0c96c3f7d053c566c54bedf4ffe03ca1580630d1752932e31314dcb802e45c36
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_linux_armelv5.zip
+    linux_armelv5: sha256:e30e9847024db74866550a92a956693b1b9a9636dc58119b92238971673fd770
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_linux_armhfv6.zip
+    linux_armhfv6: sha256:ac7253796df3ec63f7116a93bc0ac37eac2bc44be0119f9091983a270f6cde57
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_solaris_amd64.zip
+    solaris_amd64: sha256:2545e6c01f7dc31e9889267076ac489190b1e51e04cf1c374b94e5cb7bb0c214
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_windows_386.zip
+    windows_386: sha256:6268fca3361da52662fc50d59a15eb95575952a1ba8664e08652f1c8cadea24f
+    # https://releases.hashicorp.com/consul/1.8.5/consul_1.8.5_windows_amd64.zip
+    windows_amd64: sha256:944ac590dd017eb30274a48a979395010b84b5c7f426513323b1b39a1cb03c65
