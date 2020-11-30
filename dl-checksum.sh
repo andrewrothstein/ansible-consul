@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 APP=consul
 DIR=~/Downloads
 MIRROR=https://releases.hashicorp.com/${APP}
@@ -30,7 +31,6 @@ dl_all () {
 
     printf "  # %s\n" $rchecksums
     printf "  '%s':\n" $ver
-    dl $ver $lchecksums darwin 386
     dl $ver $lchecksums darwin amd64
     dl $ver $lchecksums freebsd 386
     dl $ver $lchecksums freebsd amd64
@@ -44,4 +44,4 @@ dl_all () {
     dl $ver $lchecksums windows amd64
 }
 
-dl_all ${1:-1.8.5}
+dl_all ${1:-1.9.0}
