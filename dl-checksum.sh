@@ -36,12 +36,11 @@ dl_all () {
     dl $ver $lchecksums freebsd amd64
     dl $ver $lchecksums linux 386
     dl $ver $lchecksums linux amd64
+    dl $ver $lchecksums linux arm
     dl $ver $lchecksums linux arm64
-    dl $ver $lchecksums linux armelv5
-    dl $ver $lchecksums linux armhfv6
     dl $ver $lchecksums solaris amd64
     dl $ver $lchecksums windows 386
     dl $ver $lchecksums windows amd64
 }
 
-dl_all ${1:-1.10.3}
+dl_all ${1:-1.10.4}
