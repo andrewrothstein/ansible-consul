@@ -43,4 +43,4 @@ dl_all () {
     dl $ver $lchecksums windows amd64
 }
 
-dl_all ${1:-1.10.4}
+dl_all ${1:-1.11.1}
