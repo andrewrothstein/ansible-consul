@@ -1,4 +1,6 @@
 ---
+consul_os: '{{ ansible_system | lower }}'
+consul_arch: '{{ consul_arch_map[ansible_architecture] }}'
 consul_platform: '{{ consul_os }}_{{ consul_arch }}'
 consul_name: consul_{{ consul_ver }}_{{ consul_platform }}
 consul_zip: '{{ consul_name }}.zip'
