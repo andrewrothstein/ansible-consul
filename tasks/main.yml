@@ -1,48 +1,9 @@
 ---
-- name: check for consul installation at {{ consul_install_exe }}
-  become: yes
-  stat:
-    path: '{{ consul_install_exe }}'
-  changed_when: false
-  register: consul_binary
-
-- when: not consul_binary.stat.exists
-  block:
-    - name: downloading {{ consul_url }}
-      become: '{{ consul_privilege_escalate }}'
-      become_user: root
-      get_url:
-        url: '{{ consul_url }}'
-        dest: '{{ consul_tmp_zip }}'
-        checksum: '{{ consul_checksum }}'
-        mode: 0644
-    - name: mkdir {{ consul_install_vdir }}
-      become: '{{ consul_privilege_escalate }}'
-      become_user: root
-      file:
-        path: '{{ consul_install_vdir }}'
-        state: directory
-        mode: 0755
-    - name: unarchiving {{ consul_tmp_zip }} to {{ consul_install_vdir }}
-      become: '{{ consul_privilege_escalate }}'
-      become_user: root
-      unarchive:
-        remote_src: yes
-        src: '{{ consul_tmp_zip }}'
-        dest: '{{ consul_install_vdir }}'
-        creates: '{{ consul_install_exe }}'
-  always:
-    - name: cleanup {{ consul_tmp_zip }}
-      become: '{{ consul_privilege_escalate }}'
-      become_user: root
-      file:
-        path: '{{ consul_tmp_zip }}'
-        state: absent
-
-- name: linking {{ consul_install_link }} to {{ consul_install_exe }}
-  become: '{{ consul_privilege_escalate }}'
-  become_user: root
-  file:
-    src: '{{ consul_install_exe }}'
-    dest: '{{ consul_install_link }}'
-    state: link
+- name: installing consul binaries
+  include_role:
+    name: andrewrothstein.hashi
+  vars:
+    hashi_apps:
+      - name: '{{ consul_app.name | default("consul") }}'
+        ver: '{{ consul_app.ver | default(consul_ver) }}'
+        meta: '{{ consul_app.meta | default("") }}'
