@@ -1,38 +1,37 @@
 ---
-dependencies:
-- andrewrothstein.unarchive-deps
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
   description: role to install consul
   galaxy_tags:
-  - kv
-  - cp
+    - kv
+    - cp
   license:
-  - MIT
+    - MIT
   min_ansible_version: 1.2
   platforms:
-  - name: Alpine
-    version:
-    - all
-  - name: Archlinux
-    versions:
-    - all
-  - name: Debian
-    versions:
-    - bullseye
-    - buster
-  - name: EL
-    versions:
-    - 8
-    - 9
-  - name: Fedora
-    versions:
-    - 36
-    - 37
-  - name: Ubuntu
-    versions:
-    - bionic
-    - focal
-    - jammy
+    - name: Alpine
+      version:
+      - all
+    - name: Archlinux
+      versions:
+      - all
+    - name: Debian
+      versions:
+      - bullseye
+      - buster
+    - name: EL
+      versions:
+      - 8
+      - 9
+    - name: Fedora
+      versions:
+      - 36
+      - 37
+    - name: Ubuntu
+      versions:
+      - bionic
+      - focal
+      - jammy
   role_name: consul
+  namespace: andrewrothstein
