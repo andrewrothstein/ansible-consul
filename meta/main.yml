@@ -6,8 +6,7 @@ galaxy_info:
   galaxy_tags:
     - kv
     - cp
-  license:
-    - MIT
+  license: MIT
   min_ansible_version: 1.2
   platforms:
     - name: Alpine
