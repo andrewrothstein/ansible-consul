@@ -11,25 +11,25 @@ galaxy_info:
   platforms:
     - name: Alpine
       version:
-      - all
+        - all
     - name: Archlinux
       versions:
-      - all
+        - all
     - name: Debian
       versions:
-      - bookworm
-      - bullseye
+        - bookworm
+        - bullseye
     - name: EL
       versions:
-      - 8
-      - 9
+        - 8
+        - 9
     - name: Fedora
       versions:
-      - 37
-      - 38
+        - 38
+        - 39
     - name: Ubuntu
       versions:
-      - focal
-      - jammy
+        - focal
+        - jammy
   role_name: consul
   namespace: andrewrothstein
