@@ -1,6 +1,6 @@
 ---
-- name: installing consul binaries
-  include_role:
+- name: Installing consul binaries
+  ansible.builtin.include_role:
     name: andrewrothstein.hashi
   vars:
     hashi_apps:

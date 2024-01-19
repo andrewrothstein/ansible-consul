@@ -1,9 +1,13 @@
 ---
 - hosts: all
-  roles:
-    - role: '{{ playbook_dir }}'
   tasks:
-    - command: /usr/local/bin/consul --version
+    - name: Installing andrewrothstein.consul
+      ansible.builtin.include_role:
+        name: '{{ playbook_dir }}'
+    - name: Executing 'consul --version'
+      ansible.builtin.command: /usr/local/bin/consul --version
+      changed_when: false
       register: consul_test_output
-    - debug:
+    - name: Output from 'consul --version'
+      ansible.builtin.debug:
         msg: '{{ consul_test_output.stdout }}'
