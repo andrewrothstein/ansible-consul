@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.consul
+  hosts: all
   tasks:
     - name: Installing andrewrothstein.consul
       ansible.builtin.include_role:
